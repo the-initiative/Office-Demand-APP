@@ -9,4 +9,21 @@ import { Component } from '@angular/core';
   templateUrl: 'list.component.html',
   styleUrls: ['list.component.css']
 })
-export class ListComponent { }
+export class ListComponent implements OnInit {
+
+  newItem = '';
+  items: any[] = [];
+
+
+  ngOnInit() {
+    this.getItems();
+  }
+
+  getItems() {
+    //integrate firebase call
+  }
+
+  deleteItem(index: number) {
+    this.items.splice(index,1);
+  }
+}
