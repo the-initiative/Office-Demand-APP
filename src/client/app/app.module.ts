@@ -12,6 +12,7 @@ import { environment } from '../../configs/environment';
 import { AboutModule } from './about/about.module';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
+import {ListModule } from './list/list.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     AboutModule,
     HomeModule,
+    ListModule,
     SharedModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase)
   ],
