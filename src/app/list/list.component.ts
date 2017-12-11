@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 
-export interface Item { name: string; }
+export interface Item { name: string, date: string}
 
 @Component({
   selector: 'app-list',
@@ -12,7 +12,8 @@ export interface Item { name: string; }
 
 
 export class ListComponent implements OnInit {
-
+  public name: string;
+  public date: string;
   private itemsCollection: AngularFirestoreCollection<Item>;
   items: Observable<Item[]>;
   constructor(private afs: AngularFirestore) {
