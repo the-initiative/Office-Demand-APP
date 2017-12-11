@@ -1,4 +1,5 @@
-<button mat-button (click)="addItem({'name': 'test'})">Add</button>
+<input matInput [(ngModel)]="name">
+<button mat-button (click)="addItem({'name': name})">Add</button>
 
 <ul>
   <li *ngFor="let item of items | async">
