@@ -9,6 +9,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
+
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
 import { UserComponent } from './user/user.component';
@@ -27,6 +30,8 @@ import { UserComponent } from './user/user.component';
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule
   ],
