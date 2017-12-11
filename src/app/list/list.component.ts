@@ -11,14 +11,19 @@ export interface Item { name: string; }
 })
 
 
-  export class ListComponent {
-    private itemsCollection: AngularFirestoreCollection<Item>;
-    items: Observable<Item[]>;
-    constructor(private afs: AngularFirestore) {
-      this.itemsCollection = afs.collection<Item>('items');
-      this.items = this.itemsCollection.valueChanges();
-    }
-    addItem(item: Item) {
-      this.itemsCollection.add(item);
-    }
+export class ListComponent implements OnInit {
+
+  private itemsCollection: AngularFirestoreCollection<Item>;
+  items: Observable<Item[]>;
+  constructor(private afs: AngularFirestore) {
+    this.itemsCollection = afs.collection<Item>('items');
+    this.items = this.itemsCollection.valueChanges();
   }
+  addItem(item: Item) {
+    this.itemsCollection.add(item);
+  }
+
+  ngOnInit() {
+  }
+
+}
