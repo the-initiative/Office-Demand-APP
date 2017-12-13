@@ -4,6 +4,7 @@ import { FormsModule }   from '@angular/forms';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AppComponent} from './app.component';
+import {RoutingModule} from './routing.module';
 import {firebaseConfig} from './environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -26,6 +27,7 @@ import { UserComponent } from './user/user.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RoutingModule,
     FormsModule,
     MatToolbarModule,
     MatButtonModule,
