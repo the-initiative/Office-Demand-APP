@@ -28,6 +28,10 @@ export class ListComponent implements OnInit {
 
   }
 
+  voteDown(item: Item) {
+
+  }
+
   ngOnInit() {
   }
 
