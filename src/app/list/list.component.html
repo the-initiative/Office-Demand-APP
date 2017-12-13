@@ -6,6 +6,6 @@
 
 <ul>
   <li *ngFor="let item of items | async">
-    {{ item.name }} on {{ item.date }}   <button onclick="">Vote up</button> 
+    {{ item.name }} on {{ item.date }}   <button mat-button (click)="voteUp(item)">Vote up</button> 
   </li>
 </ul>
