@@ -24,6 +24,10 @@ export class ListComponent implements OnInit {
     this.itemsCollection.add(item);
   }
 
+  voteUp(item: Item) {
+
+  }
+
   ngOnInit() {
   }
 
