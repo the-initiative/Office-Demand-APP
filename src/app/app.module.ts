@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AppComponent} from './app.component';
@@ -13,22 +13,22 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
 
-import { ListComponent } from './list/list.component';
-import { ItemComponent } from './item/item.component';
-import { UserComponent } from './user/user.component';
+import { ListModule } from './list/list.module';
+import { ItemModule } from './item/item.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ListComponent,
-    ItemComponent,
-    UserComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RoutingModule,
     FormsModule,
+    RoutingModule,
+    ListModule,
+    ItemModule,
+    UserModule,
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
