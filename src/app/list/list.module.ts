@@ -14,7 +14,7 @@ import {MatNativeDateModule} from '@angular/material';
   imports: [
     CommonModule,
     FormsModule,
-    ListRoutingModule
+    ListRoutingModule,
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
