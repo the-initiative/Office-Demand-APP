@@ -1,5 +1,10 @@
-<ul>
-  <li *ngFor="let item of items | async">
-    {{ item.name }} on {{ item.date }}   <button mat-button (click)="voteUp(item)">Vote up</button> <button mat-button (click)="voteDown(item)">Vote down</button>
-  </li>
-</ul>
+<mat-list>
+  <h3 mat-subheader>Items</h3>
+  <mat-list-item *ngFor="let item of items | async" class="grey-border">
+    <h4 mat-line>{{item.name}}</h4>
+    <p mat-line> {{item.date | date}} </p>
+    <button mat-button (click)="voteUp(item)">Vote up</button>
+    <button mat-button (click)="voteDown(item)">Vote down</button>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
