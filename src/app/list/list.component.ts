@@ -19,20 +19,27 @@ export class ListComponent implements OnInit {
   public date: string;
   private itemsCollection: AngularFirestoreCollection<Item>;
   items: Observable<Item[]>;
+
   constructor(private afs: AngularFirestore) {
     this.itemsCollection = afs.collection<Item>('items');
-    this.items = this.itemsCollection.valueChanges();
+    this.items = this.itemsCollection.snapshotChanges().map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data() as Item;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      });
+    });
   }
   addItem(item: Item) {
     this.itemsCollection.add(item);
   }
 
   voteUp(item: Item) {
-
+    console.log('item ' + item.id);
   }
 
   voteDown(item: Item) {
-
+    console.log('item ' + item.id);
   }
 
   ngOnInit() {
