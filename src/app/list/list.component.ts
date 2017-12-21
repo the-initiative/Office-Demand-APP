@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 
 
 
 
-export interface Item { name: string, date: string}
+export interface Item { name: string; date: string; id: string; rating: number}
 
 @Component({
   selector: 'app-list',
@@ -19,6 +19,7 @@ export class ListComponent implements OnInit {
   public date: string;
   private itemsCollection: AngularFirestoreCollection<Item>;
   items: Observable<Item[]>;
+  private currentItemDoc: AngularFirestoreDocument<Item>;
 
   constructor(private afs: AngularFirestore) {
     this.itemsCollection = afs.collection<Item>('items');
@@ -35,14 +36,15 @@ export class ListComponent implements OnInit {
   }
 
   voteUp(item: Item) {
-    console.log('item ' + item.id);
+    this.currentItemDoc = this.itemsCollection.doc('/' + item.id);
+    this.currentItemDoc.update({rating: isNaN(item.rating) ?  1 : item.rating + 1});
   }
 
   voteDown(item: Item) {
-    console.log('item ' + item.id);
+    this.currentItemDoc = this.itemsCollection.doc('/' + item.id);
+    this.currentItemDoc.update({rating: isNaN(item.rating) ? 1 : item.rating - 1});
   }
 
   ngOnInit() {
   }
-
 }
