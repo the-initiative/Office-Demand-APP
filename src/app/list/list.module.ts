@@ -4,6 +4,7 @@ import { ListComponent } from './list.component';
 import { ListRoutingModule } from './list-routing.module';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -12,7 +13,8 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     ListRoutingModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule
   ],
   declarations: [ListComponent],
   exports: [ListComponent]
