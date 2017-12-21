@@ -7,7 +7,7 @@ import {MatNativeDateModule} from '@angular/material';
 
 
 
-export interface Item { name: string, date: string}
+export interface Item { id: string, name: string, date: string}
 
 @Component({
   selector: 'app-list',
