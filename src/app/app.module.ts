@@ -6,7 +6,9 @@ import {AppComponent} from './app.component';
 import {RoutingModule} from './routing.module';
 import {firebaseConfig} from './environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 
 import { ListModule } from './list/list.module';
 import { ItemModule } from './item/item.module';
@@ -24,6 +26,7 @@ import { UserModule } from './user/user.module';
     ItemModule,
     UserModule,
     MatToolbarModule,
+    MatButtonModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule
   ],
