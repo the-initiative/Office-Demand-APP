@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
 
 
 
@@ -29,9 +31,6 @@ export class ListComponent implements OnInit {
         return { id, ...data };
       });
     });
-  }
-  addItem(item: Item) {
-    this.itemsCollection.add(item);
   }
 
   voteUp(item: Item) {
