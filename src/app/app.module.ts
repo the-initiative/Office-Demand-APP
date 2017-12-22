@@ -9,10 +9,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 import { ListModule } from './list/list.module';
 import { ItemModule } from './item/item.module';
 import { UserModule } from './user/user.module';
+
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -27,10 +33,14 @@ import { UserModule } from './user/user.module';
     UserModule,
     MatToolbarModule,
     MatButtonModule,
+    FormsModule,
+    MatButtonModule,
+    MatInputModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
