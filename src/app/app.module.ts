@@ -8,7 +8,6 @@ import {firebaseConfig} from './environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -32,7 +31,6 @@ import { AuthService } from './auth.service';
     ItemModule,
     UserModule,
     MatToolbarModule,
-    MatButtonModule,
     FormsModule,
     MatButtonModule,
     MatInputModule,

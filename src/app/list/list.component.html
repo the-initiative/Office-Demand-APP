@@ -1,11 +1,7 @@
-<input matInput [(ngModel)]="name">
-<input matInput  [(ngModel)]="date" [matDatepicker]="picker" placeholder="Choose a date">
-<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-<mat-datepicker #picker></mat-datepicker>
-<button mat-button (click)="addItem({'name': name, 'date': date})">Add</button>
+
 
 <ul>
   <li *ngFor="let item of items | async">
-    {{ item.name }} on {{ item.date }}   <button mat-button (click)="voteUp(item)">Vote up</button> <button mat-button (click)="voteDown(item)">Vote down</button> 
+    {{ item.name }} on {{ item.date }}   <button mat-button (click)="voteUp(item)">Vote up</button> <button mat-button (click)="voteDown(item)">Vote down</button>
   </li>
 </ul>
